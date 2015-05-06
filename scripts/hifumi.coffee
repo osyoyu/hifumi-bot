@@ -80,8 +80,8 @@ module.exports = (robot) ->
   ]
 
   robot.respond /おすすめ譜面/i, (res) ->
-    res.send res.random(ddr_sp14)
-
+    if user.room == "ddr" || user.room == "tech"
+      res.send res.random(ddr_sp14)
 
   robot.hear /風に吹かれて/i, (res) ->
     res.send "波打つ水の"
