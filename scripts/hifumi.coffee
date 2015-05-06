@@ -1,13 +1,8 @@
 # Description:
-#   Example scripts for you to examine and try out.
+#   Messing around with the YouTube API.
 #
-# Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-
+# Commands:
+#   hubot おすすめ <機種名> <タグ> - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
   ddr_sp14 = [
     '888 (EXPERT)',
@@ -79,24 +74,5 @@ module.exports = (robot) ->
     '野球の遊び方 そしてその歴史 ～決定版～ (EXPERT)'
   ]
 
-  robot.respond /おすすめ譜面/i, (res) ->
-    if user.room == "ddr" || user.room == "tech"
-      res.send res.random(ddr_sp14)
-
-  robot.hear /風に吹かれて/i, (res) ->
-    res.send "波打つ水の"
-
-  robot.hear /(潮|塩|しお)の香りに/i, (res) ->
-    res.send "包まれる"
-
-  robot.hear /空に浮かぶ/i, (res) ->
-    res.send "雲流るるは"
-
-  robot.hear /揺られて進むか/i, (res) ->
-    res.send "海の橋"
-
-  robot.hear /大(桟|さん)橋/i, (res) ->
-    res.send "https://www.youtube.com/watch?v=TF__ODoRIJI"
-
-  robot.respond /(こつ|コツ|方法)/i, (res) ->
-    res.send "降ってきたノーツをつくやけどす"
+  robot.respond /おすすめ/i, (msg) ->
+    res.send res.random(ddr_sp14)
