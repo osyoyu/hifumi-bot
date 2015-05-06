@@ -4,5 +4,5 @@ module.exports = (robot) ->
   robot.respond /(こつ|コツ|方法)/, (res) ->
     res.send "降ってきたノーツをつくやけどす"
 
-  robot.respond /ここはどこ/, (msg) ->
-    msg.send msg.user.room
+  robot.respond /ここはどこ/i, (msg) ->
+    msg.send "ここは #{msg.user.room}"
