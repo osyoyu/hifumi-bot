@@ -94,3 +94,6 @@ module.exports = (robot) ->
 
   robot.hear /揺られて進むか/i, (res) ->
     res.send "海の橋"
+
+  robot.hear /大(桟|さん)橋/i, (res) ->
+    res.send "https://www.youtube.com/watch?v=TF__ODoRIJI"
