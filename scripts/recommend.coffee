@@ -75,4 +75,4 @@ module.exports = (robot) ->
   ]
 
   robot.respond /おすすめ/i, (msg) ->
-    res.send res.random(ddr_sp14)
+    msg.send msg.random(ddr_sp14)
