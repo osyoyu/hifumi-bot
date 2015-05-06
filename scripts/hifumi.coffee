@@ -97,3 +97,6 @@ module.exports = (robot) ->
 
   robot.hear /大(桟|さん)橋/i, (res) ->
     res.send "https://www.youtube.com/watch?v=TF__ODoRIJI"
+
+  robot.respond /(こつ|コツ|方法)/i, (res) ->
+    res.send "降ってきたノーツをつくやけどす"
