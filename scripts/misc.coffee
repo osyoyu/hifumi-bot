@@ -5,7 +5,4 @@ module.exports = (robot) ->
     msg.send "降ってきたノーツをつくやけどす"
 
   robot.respond /ここはどこ/, (msg) ->
-    msg.send "msg.room: #{msg.room}"
-    msg.send "msg.channel: #{msg.channel}"
-    msg.send "msg.user.room: #{msg.user.room}"
-    msg.send "msg.user.channel: #{msg.user.channel}"
+    msg.send "msg.message.room: #{msg.message.room}"
