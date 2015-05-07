@@ -2,7 +2,7 @@
 #   Messing around with the YouTube API.
 #
 # Commands:
-#   hubot おすすめ <機種名> - おすすめっぽい曲を教えてくれる
+#   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
   ddr_sp14 = [
     '888 (EXPERT)',
@@ -74,8 +74,12 @@ module.exports = (robot) ->
     '野球の遊び方 そしてその歴史 ～決定版～ (EXPERT)'
   ]
 
-  robot.respond /おすすめ (.*)/i, (msg) ->
-    game = msg.match[1]
+  robot.respond /おすすめ/i, (msg) ->
+    channel = msg.message.room
 
-    if game.match /ddr/i
-      msg.send msg.random(ddr_sp14)
+    if channel == 'ddr'
+      result = msg.random(ddr_sp14)
+    else
+      result = "ここには何も登録されてないよ"
+
+    msg.send result
