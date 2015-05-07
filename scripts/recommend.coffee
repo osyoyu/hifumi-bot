@@ -4,6 +4,10 @@
 # Commands:
 #   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
+  iidx = [
+    'Beastie Starter (ANOTHER)'
+  ]
+
   ddr_sp14 = [
     '888 (EXPERT)',
     'IX (DIFFICULT)',
@@ -77,7 +81,9 @@ module.exports = (robot) ->
   robot.respond /おすすめ/i, (msg) ->
     channel = msg.message.room
 
-    if channel == 'ddr'
+    if channel == 'beatmania2dx'
+      result = msg.random(iidx)
+    else if channel == 'ddr'
       result = msg.random(ddr_sp14)
     else
       result = "ここには何も登録されてないよ"
