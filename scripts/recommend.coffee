@@ -5,7 +5,11 @@
 #   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
   iidx = [
-    'Beastie Starter (ANOTHER)'
+    'Beastie Starter (ANOTHER)',
+    'Fascination MAXX (ANOTHER)',
+    'DUE TOMORROW (ANOTHER)',
+    'MAX 300 (HYPER)',
+    'DAY DREAM (ANOTHER)'
   ]
 
   ddr_sp14 = [
