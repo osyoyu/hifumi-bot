@@ -4,6 +4,14 @@
 # Commands:
 #   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
+  popn = [
+    'トイコンテンポラリーEX',
+    'サイレントEX',
+    'ダージュEX'
+    'ムラクモEX',
+    'エンジェリオンEX'
+  ]
+
   iidx = [
     'Beastie Starter (ANOTHER)',
     'Fascination MAXX (ANOTHER)',
@@ -87,6 +95,8 @@ module.exports = (robot) ->
 
     if channel == 'beatmania2dx'
       result = msg.random(iidx)
+    else if channel == 'popn'
+      result = msg.random(popn)
     else if channel == 'ddr'
       result = msg.random(ddr_sp14)
     else
