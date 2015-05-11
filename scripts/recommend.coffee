@@ -18,8 +18,6 @@ iidxs[12] = require('./iidx_sp12.json')
 # Commands:
 #   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
-  iidx = require('./iidx_allsongs.json')
-
   ddr_sp14 = [
     '888 (EXPERT)',
     'IX (DIFFICULT)',
