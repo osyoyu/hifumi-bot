@@ -1,3 +1,17 @@
+iidxs = []
+iidxs[1] = require('./iidx_sp1.json')
+iidxs[2] = require('./iidx_sp2.json')
+iidxs[3] = require('./iidx_sp3.json')
+iidxs[4] = require('./iidx_sp4.json')
+iidxs[5] = require('./iidx_sp5.json')
+iidxs[6] = require('./iidx_sp6.json')
+iidxs[7] = require('./iidx_sp7.json')
+iidxs[8] = require('./iidx_sp8.json')
+iidxs[9] = require('./iidx_sp9.json')
+iidxs[10] = require('./iidx_sp10.json')
+iidxs[11] = require('./iidx_sp11.json')
+iidxs[12] = require('./iidx_sp12.json')
+
 # Description:
 #   Messing around with the YouTube API.
 #
@@ -5,19 +19,6 @@
 #   hubot おすすめ - おすすめっぽい曲を教えてくれる
 module.exports = (robot) ->
   iidx = require('./iidx_allsongs.json')
-  iidxs = []
-  iidxs[1] = require('./iidx_sp1.json')
-  iidxs[2] = require('./iidx_sp2.json')
-  iidxs[3] = require('./iidx_sp3.json')
-  iidxs[4] = require('./iidx_sp4.json')
-  iidxs[5] = require('./iidx_sp5.json')
-  iidxs[6] = require('./iidx_sp6.json')
-  iidxs[7] = require('./iidx_sp7.json')
-  iidxs[8] = require('./iidx_sp8.json')
-  iidxs[9] = require('./iidx_sp9.json')
-  iidxs[10] = require('./iidx_sp10.json')
-  iidxs[11] = require('./iidx_sp11.json')
-  iidxs[12] = require('./iidx_sp12.json')
 
   ddr_sp14 = [
     '888 (EXPERT)',
@@ -97,13 +98,9 @@ module.exports = (robot) ->
         result = msg.random(iidxs[parseInt(msg.match[1], 10)]).name
       else
         result = msg.random(iidx)
-
     else if channel == 'ddr'
       result = msg.random(ddr_sp14)
-
     else
       result = "ここには何も登録されてないよ"
 
     msg.send result
-
-  select_song = (
