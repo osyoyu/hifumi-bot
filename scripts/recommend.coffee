@@ -88,22 +88,23 @@ module.exports = (robot) ->
     '野球の遊び方 そしてその歴史 ～決定版～ (EXPERT)'
   ]
 
-  robot.respond /おすすめ (.*) (.*)/i, (msg) ->
+  robot.respond /おすすめ (.*)/i, (msg) ->
     channel = msg.message.room
 
+    if msg.match[1]
+      qu = msg.split(" ")
+
     if channel == 'beatmania2dx'
-      if msg.match[1]
+      if qu.length >= 1
         song = msg.random(iidxs[parseInt(msg.match[1], 10)])
         result = "#{song.name} (N: ☆#{song.spn} / H: ☆#{song.sph} / A: ☆#{song.spa})"
-      else
-        result = msg.random(iidx)
     else if channel == 'ddr'
       result = msg.random(ddr_sp14)
     else
       result = "ここには何も登録されてないよ"
 
-    if msg.match[2]
-      query = msg.match[2]
+    if qu.length >= 2
+      query = qu[1]
       robot.http("http://gdata.youtube.com/feeds/api/videos")
         .query({
           orderBy: "relevance"
