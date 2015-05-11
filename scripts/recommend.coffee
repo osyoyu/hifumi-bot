@@ -93,7 +93,8 @@ module.exports = (robot) ->
 
     if channel == 'beatmania2dx'
       if msg.match[1]
-        result = msg.random(iidxs[parseInt(msg.match[1], 10)]).name
+        song = msg.random(iidxs[parseInt(msg.match[1], 10)])
+        result = "#{song.genre} #{song.name} (#{song.artist}) BPM#{song.bpm}"
       else
         result = msg.random(iidx)
     else if channel == 'ddr'
