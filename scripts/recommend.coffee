@@ -101,7 +101,7 @@ module.exports = (robot) ->
         result += "#{song.name} (N: ☆#{song.spn} / H: ☆#{song.sph} / A: ☆#{song.spa})\n"
 
       if qu.length >= 2
-        result += "movie(song.name)\n"
+        result += "#{movie(song.name)}\n"
 
     else if channel == 'ddr'
       result = msg.random(ddr_sp14)
