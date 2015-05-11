@@ -1,3 +1,5 @@
+util = require('util')
+
 iidxs = []
 iidxs[1] = require('./iidx_sp1.json')
 iidxs[2] = require('./iidx_sp2.json')
@@ -131,4 +133,5 @@ module.exports = (robot) ->
         video  = videos[0]
         video.link.forEach (link) ->
           if link.rel is "alternate" and link.type is "text/html"
+            console.log(util.inspect(link))
             return link.href
