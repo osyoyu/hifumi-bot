@@ -113,7 +113,7 @@ module.exports = (robot) ->
 
 
   movie = (title) ->
-    query = qu[1]
+    query = title
     robot.http("http://gdata.youtube.com/feeds/api/videos")
       .query({
         orderBy: "relevance"
