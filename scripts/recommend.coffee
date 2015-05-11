@@ -113,7 +113,7 @@ module.exports = (robot) ->
 
 
   movie = (title) ->
-    query = title
+    query = "IIDX #{title}"
     robot.http("http://gdata.youtube.com/feeds/api/videos")
       .query({
         orderBy: "relevance"
@@ -128,7 +128,7 @@ module.exports = (robot) ->
         unless videos?
           return "どうがはなかったよ……"
 
-        video  = msg.random videos
+        video  = videos[0]
         video.link.forEach (link) ->
           if link.rel is "alternate" and link.type is "text/html"
             return link.href
