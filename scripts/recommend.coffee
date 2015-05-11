@@ -92,7 +92,7 @@ module.exports = (robot) ->
     channel = msg.message.room
 
     if msg.match[1]
-      qu = msg.split(" ")
+      qu = msg.match[1].split(" ")
 
     if channel == 'beatmania2dx'
       if qu.length >= 1
