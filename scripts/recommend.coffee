@@ -27,7 +27,12 @@ module.exports = (robot) ->
         "連皿": "scratch",
         "皿曲": "scratch"
       }
-    }
+    },
+    "ddr": {
+      prefix: "ddr_",
+      aliases: {
+        "all": "sp14"
+      }
   }
 
   songs = {
