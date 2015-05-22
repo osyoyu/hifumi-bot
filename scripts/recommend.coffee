@@ -33,6 +33,7 @@ module.exports = (robot) ->
       aliases: {
         "all": "sp14"
       }
+    }
   }
 
   songs = {
